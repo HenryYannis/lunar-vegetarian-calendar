@@ -13,12 +13,22 @@
 
 ## 🔗 訂閱連結
 
-請根據您的設備平台，選擇下方對應的訂閱連結：
+請根據您的設備和平台，選擇下方對應的訂閱方式：
 
-- **Apple 設備一鍵訂閱** (iOS / macOS / iPadOS)：
-  `webcal://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
-- **通用訂閱連結** (用於手動新增，如 Google Calendar / Outlook)：
-  `https://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
+### 1. Apple 設備一鍵訂閱 (iOS / macOS / iPadOS)
+*   **推薦 (GitHub 鏡像)**:
+    `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
+*   **官方源 (xbmlz.cn)**:
+    `webcal://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
+
+### 2. Google Calendar 一鍵訂閱
+*   [點擊一鍵匯入/訂閱到谷歌日曆](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2FHenryYannis%2Flunar-vegetarian-calendar%2Fmain%2Fchuyi-shiwu-traditional.ics)
+
+### 3. 通用訂閱連結 (用於手動新增，如 Outlook 或安卓行事曆)
+*   **推薦 (GitHub 鏡像)**:
+    `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
+*   **官方源 (xbmlz.cn)**:
+    `https://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
 
 ---
 
