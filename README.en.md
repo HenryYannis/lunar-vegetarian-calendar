@@ -42,9 +42,8 @@ Please choose the appropriate subscription link based on your preferred language
 ## 🛠️ Subscription Tutorials by Platform
 
 ### 📱 Apple Devices (iPhone / iPad)
-1. Copy the **One-click subscription link** above, open it in Safari on your iPhone/iPad, and the system will automatically prompt you to subscribe.
-2. Alternatively, go to **Settings -> Calendar -> Accounts -> Add Account -> Other -> Add Subscribed Calendar**.
-3. Paste the universal subscription link into the "Server" field, tap Next, and save.
+1. Directly click the **Click here to subscribe** link above, and the system will automatically prompt you to subscribe. If clicking has no response, copy the link in the code block below, paste it in Safari, and open it.
+2. Alternatively, manually add: go to **Settings -> Calendar -> Accounts -> Add Account -> Other -> Add Subscribed Calendar**, paste the universal subscription link in the "Server" field, and save.
 
 ### 💻 Mac
 1. Open the built-in **Calendar** app.
@@ -59,6 +58,23 @@ Please choose the appropriate subscription link based on your preferred language
 ### 🤖 Android Devices (Xiaomi, Huawei, OPPO, vivo, etc.)
 You can usually import via URL by opening the built-in Calendar app and tapping "Add Calendar/Subscribe Calendar" under settings or account management. If your system calendar does not support direct URL import, it is recommended to add the link to your associated Google or Outlook account first, and then enable sync for that account in your phone's calendar settings.
 
+## 📂 Project Structure
+
+```text
+├── .github/workflows/
+│   └── update-feeds.yml     # GitHub Actions workflow for automated rolling updates
+├── scripts/
+│   ├── generate_feeds.py    # Python script to extract rolling 13-month calendar from database (no deps)
+│   └── generate_all_sources.py # One-time generation script for the 2026-2999 source database (requires tyme4py)
+├── sources/
+│   ├── chuyi-shiwu-simplified-all.ics # Complete 2026-2999 Simplified Chinese database (6.4MB)
+│   └── chuyi-shiwu-traditional-all.ics # Complete 2026-2999 Traditional Chinese database (6.4MB)
+├── chuyi-shiwu-simplified.ics  # Simplified Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
+├── chuyi-shiwu-traditional.ics # Traditional Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
+├── LICENSE                     # MIT License file
+└── README.en.md                # Project documentation
+```
+
 ---
 
 ## 📄 License
@@ -67,4 +83,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## ❤️ Credits and Disclaimer
-The raw calendar data of this project is compiled, filtered, and converted from third-party public Google Calendar subscription feeds. If you find it helpful, please star this project and share it with other vegetarian and traditional culture enthusiasts!
+The raw calendar data of this project is calculated, compiled, and generated based on the open-source calendar library [tyme](https://github.com/6tail/tyme4py). If you find it helpful, please star this project and share it with other vegetarian and traditional culture enthusiasts!
