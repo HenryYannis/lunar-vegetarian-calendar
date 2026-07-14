@@ -5,7 +5,7 @@ An auto-sync subscription calendar specially designed for people who need remind
 [简体中文](./README.md) | [繁體中文](./README.zh-Hant.md)
 
 ## 🌟 Features
-- **Extensive Coverage**: Carefully curated data covering **2026 to 2101** (75 years in total, 1821 calendar events).
+- **Extensive Coverage**: Source data covers **2026 to 2999** (974 years in total, 24094 calendar events). With automated rolling updates, subscribers only load the latest 13-month window, balancing long-term coverage and device performance.
 - **Ad-Free & Clean**: Only contains reminders for the 1st and 15th days of the lunar month, with zero ads or promotions.
 - **Cross-Platform Support**: Supports Apple Calendar, Google Calendar, Outlook, and various built-in Android calendars.
 
