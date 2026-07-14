@@ -1,0 +1,59 @@
+# 📅 农历初一十五（食斋/吃素）订阅日历 | Lunar Vegetarian Calendar
+
+专门为有农历初一、十五吃素/食斋、礼佛或作息规划需求的人群设计的自动同步订阅日历。
+
+## 🌟 特色
+- **超长跨度**：数据精细覆盖 **2026 年至 2101 年**（共 75 年，1821 个日历事件）。
+- **双语版本**：提供原汁原味的**繁体中文**版本与符合内地阅读习惯的**简体中文**版本。
+- **全平台支持**：支持 Apple Calendar、Google Calendar、Outlook 以及各种安卓系统自带日历。
+- **纯净无感**：只包含初一和十五的事件提醒，绝无任何额外推广或垃圾广告信息。
+
+---
+
+## 🔗 订阅链接 (Subscription Links)
+
+请根据您的语言习惯和设备平台，选择下方对应的订阅链接：
+
+### 1. 简体中文版 (Simplified Chinese)
+- **Apple 设备一键订阅** (iOS / macOS / iPadOS)：
+  `webcal://xbmlz.cn/assets/calendar/chuyi-shiwu-simplified.ics`
+- **通用订阅链接** (用于手动添加，如 Google Calendar / Outlook)：
+  `https://xbmlz.cn/assets/calendar/chuyi-shiwu-simplified.ics`
+
+### 2. 繁体中文版 (Traditional Chinese)
+- **Apple 设备一键订阅** (iOS / macOS / iPadOS)：
+  `webcal://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
+- **通用订阅链接** (用于手动添加，如 Google Calendar / Outlook)：
+  `https://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
+
+---
+
+## 🛠️ 各平台订阅教程
+
+### 📱 苹果设备 (iPhone / iPad)
+1. 复制上方的 **Apple 设备一键订阅** 链接，在 iPhone 的 Safari 浏览器中打开，系统会自动弹出日历订阅请求。
+2. 或者在 iPhone 上打开 **「设置」 -> 「日历」 -> 「帐户」 -> 「添加帐户」 -> 「其他」 -> 「添加已订阅的日历」**。
+3. 将通用订阅链接粘贴到「服务器」处，点击下一步，保存即可。
+
+### 💻 苹果电脑 (Mac)
+1. 打开 Mac 自带的 **「日历」** 应用。
+2. 点击顶部菜单栏的 **「文件」 -> 「新建日历订阅」**。
+3. 粘贴上述订阅链接，点击「订阅」，并将「位置」设置为「iCloud」（可多端自动同步）或「我的 Mac」。
+
+### 🌐 谷歌日历 (Google Calendar)
+1. 登录 [Google 日历网页版](https://calendar.google.com/)。
+2. 在左侧列表的「其他日历」旁，点击 **「+」 -> 「通过网址添加」**。
+3. 粘贴通用订阅链接，点击「添加日历」即可。
+
+### 🤖 安卓设备 (小米 / 华为 / OPPO / vivo 等)
+通常可以通过系统自带的日历应用，点击「设置」或「帐户管理」中的「添加日历/订阅日历」通过 URL 导入。若系统日历不支持 URL，建议先将链接导入到关联的 Google / Outlook 帐户中，然后在手机日历中开启该帐户的同步。
+
+---
+
+## 📄 开源协议 (License)
+本项目基于 [MIT License](LICENSE) 开源。
+
+---
+
+## ❤️ 鸣谢与声明
+本项目的日历原始数据基于 Google Calendar 的第三方公开订阅源整理、筛选并转换而来。如果您觉得好用，欢迎 Star 关注本项目，并分享给身边的素食与传统文化爱好者！
