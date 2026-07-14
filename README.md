@@ -17,9 +17,7 @@
 
 - **Apple 设备一键订阅** (iOS / macOS / iPadOS)：
   `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
-- **Google Calendar 一键订阅**：
-  [点击一键导入/订阅到谷歌日历](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2FHenryYannis%2Flunar-vegetarian-calendar%2Fmain%2Fchuyi-shiwu-simplified.ics)
-- **通用订阅链接** (用于手动添加，如 Outlook 或安卓日历)：
+- **通用订阅链接** (用于手动添加，如 Google Calendar / Outlook / 安卓日历)：
   `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
 
 ---

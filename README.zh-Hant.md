@@ -17,9 +17,7 @@
 
 - **Apple 設備一鍵訂閱** (iOS / macOS / iPadOS)：
   `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
-- **Google Calendar 一鍵訂閱**：
-  [點擊一鍵匯入/訂閱到谷歌日曆](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2FHenryYannis%2Flunar-vegetarian-calendar%2Fmain%2Fchuyi-shiwu-traditional.ics)
-- **通用訂閱連結** (用於手動新增，如 Outlook 或安卓行事曆)：
+- **通用訂閱連結** (用於手動新增，如 Google Calendar / Outlook / 安卓行事曆)：
   `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
 
 ---
