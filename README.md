@@ -1,30 +1,24 @@
-# 📅 农历初一十五（食斋/吃素）订阅日历 | Lunar Vegetarian Calendar
+# 📅 农历初一十五（食斋/吃素）订阅日历
 
 专门为有农历初一、十五吃素/食斋、礼佛或作息规划需求的人群设计的自动同步订阅日历。
 
+[English](./README.en.md) | [繁體中文](./README.zh-Hant.md)
+
 ## 🌟 特色
 - **超长跨度**：数据精细覆盖 **2026 年至 2101 年**（共 75 年，1821 个日历事件）。
-- **双语版本**：提供原汁原味的**繁体中文**版本与符合内地阅读习惯的**简体中文**版本。
-- **全平台支持**：支持 Apple Calendar、Google Calendar、Outlook 以及各种安卓系统自带日历。
 - **纯净无感**：只包含初一和十五的事件提醒，绝无任何额外推广或垃圾广告信息。
+- **全平台支持**：支持 Apple Calendar、Google Calendar、Outlook 以及各种安卓系统自带日历。
 
 ---
 
-## 🔗 订阅链接 (Subscription Links)
+## 🔗 订阅链接
 
-请根据您的语言习惯和设备平台，选择下方对应的订阅链接：
+请根据您的设备平台，选择下方对应的订阅链接：
 
-### 1. 简体中文版 (Simplified Chinese)
 - **Apple 设备一键订阅** (iOS / macOS / iPadOS)：
   `webcal://xbmlz.cn/assets/calendar/chuyi-shiwu-simplified.ics`
 - **通用订阅链接** (用于手动添加，如 Google Calendar / Outlook)：
   `https://xbmlz.cn/assets/calendar/chuyi-shiwu-simplified.ics`
-
-### 2. 繁体中文版 (Traditional Chinese)
-- **Apple 设备一键订阅** (iOS / macOS / iPadOS)：
-  `webcal://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
-- **通用订阅链接** (用于手动添加，如 Google Calendar / Outlook)：
-  `https://xbmlz.cn/assets/calendar/chuyi-shiwu-traditional.ics`
 
 ---
 
@@ -50,7 +44,7 @@
 
 ---
 
-## 📄 开源协议 (License)
+## 📄 开源协议
 本项目基于 [MIT License](LICENSE) 开源。
 
 ---
