@@ -15,10 +15,10 @@
 
 請根據您的設備和平台，選擇下方對應的訂閱方式：
 
-- **Apple 設備一鍵訂閱** (iOS / macOS / iPadOS)：
-  `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
-- **通用訂閱連結** (用於手動新增，如 Google Calendar / Outlook / 安卓行事曆)：
-  `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
+- **[Apple 設備一鍵訂閱](webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics)** (iOS / macOS / iPadOS)
+  連結地址 (雙擊複製)：`webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
+- **[通用訂閱連結](https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics)** (用於手動新增，如 Google Calendar / Outlook / 安卓行事曆)
+  連結地址 (雙擊複製)：`https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
 
 ---
 

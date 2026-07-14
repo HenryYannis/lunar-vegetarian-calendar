@@ -15,10 +15,10 @@
 
 请根据您的设备和平台，选择下方对应的订阅方式：
 
-- **Apple 设备一键订阅** (iOS / macOS / iPadOS)：
-  `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
-- **通用订阅链接** (用于手动添加，如 Google Calendar / Outlook / 安卓日历)：
-  `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
+- **[Apple 设备一键订阅](webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics)** (iOS / macOS / iPadOS)
+  链接地址 (双击复制)：`webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
+- **[通用订阅链接](https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics)** (用于手动添加，如 Google Calendar / Outlook / 安卓日历)
+  链接地址 (双击复制)：`https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
 
 ---
 

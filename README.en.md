@@ -16,16 +16,16 @@ An auto-sync subscription calendar specially designed for people who need remind
 Please choose the appropriate subscription link based on your preferred language and platform:
 
 ### 1. Simplified Chinese Version
-- **Apple Calendar One-click Subscription** (iOS / macOS / iPadOS):
-  `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
-- **Universal Link** (for manual setup, e.g., Google Calendar / Outlook / Android calendars):
-  `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
+- **[Apple Calendar One-click Subscription](webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics)** (iOS / macOS / iPadOS)
+  Subscription URL (double-click to copy): `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
+- **[Universal Subscription Link](https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics)** (for manual setup, e.g., Google Calendar / Outlook / Android calendars)
+  Subscription URL (double-click to copy): `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics`
 
 ### 2. Traditional Chinese Version
-- **Apple Calendar One-click Subscription** (iOS / macOS / iPadOS):
-  `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
-- **Universal Link** (for manual setup, e.g., Google Calendar / Outlook / Android calendars):
-  `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
+- **[Apple Calendar One-click Subscription](webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics)** (iOS / macOS / iPadOS)
+  Subscription URL (double-click to copy): `webcal://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
+- **[Universal Subscription Link](https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics)** (for manual setup, e.g., Google Calendar / Outlook / Android calendars)
+  Subscription URL (double-click to copy): `https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics`
 
 ---
 
