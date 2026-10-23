@@ -62,8 +62,10 @@ You can usually import via URL by opening the built-in Calendar app and tapping 
 
 ```text
 ├── .github/workflows/
+│   ├── ci.yml               # PR check: generate the rolling feeds and self-check them
 │   └── update-feeds.yml     # GitHub Actions workflow for automated rolling updates
 ├── scripts/
+│   ├── check_feeds.py       # Feed self-check (verifies lunar dates when tyme4py is installed)
 │   ├── generate_feeds.py    # Python script to extract rolling 13-month calendar from database (no deps)
 │   └── generate_all_sources.py # One-time generation script for the 2026-2999 source database (requires tyme4py)
 ├── sources/
@@ -72,6 +74,7 @@ You can usually import via URL by opening the built-in Calendar app and tapping 
 ├── chuyi-shiwu-simplified.ics  # Simplified Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
 ├── chuyi-shiwu-traditional.ics # Traditional Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
 ├── LICENSE                     # MIT License file
+├── requirements.txt            # Pins tyme4py so an algorithm update can't silently shift dates
 └── README.en.md                # Project documentation
 ```
 
