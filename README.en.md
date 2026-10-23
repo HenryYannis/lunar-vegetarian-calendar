@@ -26,6 +26,12 @@ Please choose the appropriate subscription link based on your preferred language
   ```text
   https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-simplified.ics
   ```
+- **Mainland China CDN mirror**：
+  👉 [**One-click subscribe via CDN**](webcal://cdn.jsdelivr.net/gh/HenryYannis/lunar-vegetarian-calendar@main/chuyi-shiwu-simplified.ics)
+  ```text
+  https://cdn.jsdelivr.net/gh/HenryYannis/lunar-vegetarian-calendar@main/chuyi-shiwu-simplified.ics
+  ```
+  (Use this if the links above don't load from mainland China; same content, CDN cache may lag GitHub by a few hours)
 
 ### 2. Traditional Chinese Version
 - **Apple Calendar One-click Subscription** (iOS / macOS / iPadOS):
@@ -37,6 +43,12 @@ Please choose the appropriate subscription link based on your preferred language
   ```text
   https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics
   ```
+- **Mainland China CDN mirror**：
+  👉 [**One-click subscribe via CDN**](webcal://cdn.jsdelivr.net/gh/HenryYannis/lunar-vegetarian-calendar@main/chuyi-shiwu-traditional.ics)
+  ```text
+  https://cdn.jsdelivr.net/gh/HenryYannis/lunar-vegetarian-calendar@main/chuyi-shiwu-traditional.ics
+  ```
+  (Use this if the links above don't load from mainland China; same content, CDN cache may lag GitHub by a few hours)
 
 ---
 

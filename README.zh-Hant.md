@@ -25,6 +25,12 @@
   ```text
   https://raw.githubusercontent.com/HenryYannis/lunar-vegetarian-calendar/main/chuyi-shiwu-traditional.ics
   ```
+- **國內 CDN 加速連結**：
+  👉 [**蘋果設備一鍵訂閱（國內加速）**](webcal://cdn.jsdelivr.net/gh/HenryYannis/lunar-vegetarian-calendar@main/chuyi-shiwu-traditional.ics)
+  ```text
+  https://cdn.jsdelivr.net/gh/HenryYannis/lunar-vegetarian-calendar@main/chuyi-shiwu-traditional.ics
+  ```
+  （中國大陸網路打不開上面的連結時使用，內容相同；CDN 有快取，更新可能比 GitHub 晚幾個小時）
 
 ---
 
