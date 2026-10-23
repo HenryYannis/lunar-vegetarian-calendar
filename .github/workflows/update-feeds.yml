@@ -27,6 +27,10 @@ jobs:
         with:
           python-version: '3.x'
 
+      # 装上固定版本的 tyme4py，自检才会真正校验农历日期，否则这一步会被跳过
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
       - name: Run generation script
         run: python scripts/generate_feeds.py
 
