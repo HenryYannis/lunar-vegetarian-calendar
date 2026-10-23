@@ -5,7 +5,7 @@ An auto-sync subscription calendar specially designed for people who need remind
 [简体中文](./README.md) | [繁體中文](./README.zh-Hant.md)
 
 ## 🌟 Features
-- **Extensive Coverage**: Source data covers **2026 to 2999** (974 years in total, 24094 calendar events). With automated rolling updates, subscribers only load the latest 13-month window, balancing long-term coverage and device performance.
+- **Long-Term Coverage**: Source data covers **2026 to 2100** (75 years, 1856 calendar events). Long-range lunar calculations become less reliable further out, and official almanacs generally only go to around 2100, so the data stops there. With automated rolling updates, subscribers only load the latest 13-month window, balancing long-term coverage and device performance.
 - **Ad-Free & Clean**: Only contains reminders for the 1st and 15th days of the lunar month, with zero ads or promotions.
 - **Cross-Platform Support**: Supports Apple Calendar, Google Calendar, Outlook, and various built-in Android calendars.
 
@@ -65,10 +65,10 @@ You can usually import via URL by opening the built-in Calendar app and tapping 
 │   └── update-feeds.yml     # GitHub Actions workflow for automated rolling updates
 ├── scripts/
 │   ├── generate_feeds.py    # Python script to extract rolling 13-month calendar from database (no deps)
-│   └── generate_all_sources.py # One-time generation script for the 2026-2999 source database (requires tyme4py)
+│   └── generate_all_sources.py # One-time generation script for the 2026-2100 source database (requires tyme4py)
 ├── sources/
-│   ├── chuyi-shiwu-simplified-all.ics # Complete 2026-2999 Simplified Chinese database (6.4MB)
-│   └── chuyi-shiwu-traditional-all.ics # Complete 2026-2999 Traditional Chinese database (6.4MB)
+│   ├── chuyi-shiwu-simplified-all.ics # Complete 2026-2100 Simplified Chinese database (~510KB)
+│   └── chuyi-shiwu-traditional-all.ics # Complete 2026-2100 Traditional Chinese database (~510KB)
 ├── chuyi-shiwu-simplified.ics  # Simplified Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
 ├── chuyi-shiwu-traditional.ics # Traditional Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
 ├── LICENSE                     # MIT License file
