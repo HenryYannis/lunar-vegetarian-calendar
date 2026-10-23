@@ -30,6 +30,10 @@ jobs:
       - name: Run generation script
         run: python scripts/generate_feeds.py
 
+      # 自检不通过就让 job 失败，不提交坏文件
+      - name: Self-check feeds
+        run: python scripts/check_feeds.py
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
