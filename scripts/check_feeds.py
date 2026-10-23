@@ -2,7 +2,10 @@
 
 检查项：
 - 文件以 BEGIN:VCALENDAR 开头、END:VCALENDAR 结尾，VEVENT 成对出现
-- 事件数在合理范围内（13~14 个月窗口，正常 26~30 个）
+- 所有换行都是 CRLF（没有裸 LF / 裸 CR），文件以 CRLF 结尾（RFC 5545 3.1）
+- 每一行不超过 75 个 UTF-8 字节（RFC 5545 3.1，超长行必须折叠）
+- 每个 VEVENT 都有且只有一个 DTSTAMP 和 UID（RFC 5545 3.6.1）
+- 事件数在合理范围内（14 个月窗口，正常 27~30 个）
 - 所有日期都落在 generate_feeds.py 的滚动窗口内，且 UID 不重复
 - 如果装了 tyme4py（requirements.txt），再逐个核对确实是农历初一或十五
 """
@@ -21,8 +24,26 @@ FEEDS = ["chuyi-shiwu-simplified.ics", "chuyi-shiwu-traditional.ics"]
 
 def check(path, start_date, end_date):
     errors = []
-    with open(path, encoding="utf-8", newline="") as f:
-        raw = f.read()
+    with open(path, "rb") as f:
+        data = f.read()
+
+    # 字节层面的检查：换行符和行长度
+    if not data.endswith(b"\r\n"):
+        errors.append("文件没有以 CRLF 结尾")
+    bare_lf = data.count(b"\n") - data.count(b"\r\n")
+    bare_cr = data.count(b"\r") - data.count(b"\r\n")
+    if bare_lf or bare_cr:
+        errors.append(f"有 {bare_lf} 个裸 LF、{bare_cr} 个裸 CR，换行必须是 CRLF")
+    physical = data.split(b"\r\n")
+    if physical and physical[-1] == b"":
+        physical.pop()
+    too_long = [i + 1 for i, line in enumerate(physical) if len(line) > 75]
+    if too_long:
+        errors.append(f"有 {len(too_long)} 行超过 75 字节（未折叠），例如第 {too_long[0]} 行")
+
+    raw = data.decode("utf-8")
+    # 先展开折叠行（CRLF 后跟空格或制表符），后面按逻辑行检查
+    raw = re.sub(r"\r\n[ \t]", "", raw)
     lines = raw.splitlines()
     if not lines or lines[0] != "BEGIN:VCALENDAR":
         errors.append("第一行不是 BEGIN:VCALENDAR")
@@ -44,6 +65,14 @@ def check(path, start_date, end_date):
     uids = re.findall(r"^UID:(.+?)\r?$", raw, re.M)
     if len(uids) != len(set(uids)):
         errors.append("UID 有重复")
+
+    # 每个 VEVENT 必须各有一个 DTSTAMP 和 UID（VALARM 里不会出现这两个属性）
+    for i, body in enumerate(re.findall(r"^BEGIN:VEVENT\r?$(.*?)^END:VEVENT\r?$", raw, re.M | re.S), 1):
+        for prop in ("DTSTAMP", "UID"):
+            n = len(re.findall(rf"^{prop}[:;]", body, re.M))
+            if n != 1:
+                errors.append(f"第 {i} 个 VEVENT 有 {n} 个 {prop}，应为 1 个")
+                break
 
     try:
         from tyme4py.solar import SolarDay

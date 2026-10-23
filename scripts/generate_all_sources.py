@@ -3,6 +3,42 @@ import sys
 import datetime
 import time
 
+
+def escape_text(value):
+    """RFC 5545 3.3.11 TEXT 转义：反斜杠、分号、逗号、换行。"""
+    return (
+        value.replace("\\", "\\\\")
+        .replace(";", "\\;")
+        .replace(",", "\\,")
+        .replace("\r\n", "\\n")
+        .replace("\n", "\\n")
+    )
+
+
+def fold(line, limit=75):
+    """RFC 5545 3.1 行折叠：每行不超过 75 个 UTF-8 字节，续行以一个空格开头。
+
+    按字符切分，不会把一个中文字符的 UTF-8 字节拆到两行。
+    """
+    if len(line.encode("utf-8")) <= limit:
+        return line
+    parts = []
+    current = ""
+    current_len = 0
+    for ch in line:
+        ch_len = len(ch.encode("utf-8"))
+        # 续行开头的空格也占 1 个字节
+        budget = limit if not parts else limit - 1
+        if current_len + ch_len > budget:
+            parts.append(current)
+            current = ch
+            current_len = ch_len
+        else:
+            current += ch
+            current_len += ch_len
+    parts.append(current)
+    return "\n ".join(parts)
+
 def generate_events(start_year, end_year, is_traditional):
     from tyme4py.solar import SolarDay
     
@@ -52,18 +88,18 @@ def generate_events(start_year, end_year, is_traditional):
                 f"LAST-MODIFIED:{dtstamp}",
                 "SEQUENCE:0",
                 "STATUS:CONFIRMED",
-                f"SUMMARY:{event_summary}",
+                f"SUMMARY:{escape_text(event_summary)}",
                 # 初一十五是提醒不是会议，不占用“忙碌”时间
                 "TRANSP:TRANSPARENT",
                 # 前一天晚上 20:00 提醒（全天事件从当天 0 点往前推 4 小时）
                 "BEGIN:VALARM",
                 "ACTION:DISPLAY",
-                f"DESCRIPTION:{alarm_map[name]}",
+                f"DESCRIPTION:{escape_text(alarm_map[name])}",
                 "TRIGGER:-PT4H",
                 "END:VALARM",
                 "END:VEVENT"
             ]
-            events.append("\n".join(event))
+            events.append("\n".join(fold(line) for line in event))
             
         curr += datetime.timedelta(days=1)
         processed += 1
@@ -80,14 +116,14 @@ def write_calendar(path, name, desc, events):
         "PRODID:-//Lunar Vegetarian Calendar//Generator 1.0//EN",
         "VERSION:2.0",
         "CALSCALE:GREGORIAN",
-        f"X-WR-CALNAME:{name}",
+        f"X-WR-CALNAME:{escape_text(name)}",
         "X-WR-TIMEZONE:Asia/Shanghai",
-        f"X-WR-CALDESC:{desc}",
+        f"X-WR-CALDESC:{escape_text(desc)}",
         # 告诉 Apple / Outlook 等客户端每天刷新一次
         "REFRESH-INTERVAL;VALUE=DURATION:P1D",
         "X-PUBLISHED-TTL:P1D",
     ]
-    content = "\n".join(header) + "\n" + "\n".join(events) + "\nEND:VCALENDAR\n"
+    content = "\n".join(fold(line) for line in header) + "\n" + "\n".join(events) + "\nEND:VCALENDAR\n"
     with open(path, "w", encoding="utf-8", newline="\r\n") as f:
         f.write(content)
     print(f"Wrote {name} calendar to {path}")
