@@ -14,6 +14,11 @@ def generate_events(start_year, end_year, is_traditional):
     # Format current UTC time for DTSTAMP and LAST-MODIFIED
     dtstamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     
+    alarm_map = {
+        "初一": "明天農曆初一，記得吃素" if is_traditional else "明天农历初一，记得吃素",
+        "十五": "明天農曆十五，記得吃素" if is_traditional else "明天农历十五，记得吃素"
+    }
+
     summary_map = {
         "初一": "農曆初一" if is_traditional else "农历初一",
         "十五": "農曆十五" if is_traditional else "农历十五"
@@ -50,6 +55,12 @@ def generate_events(start_year, end_year, is_traditional):
                 f"SUMMARY:{event_summary}",
                 # 初一十五是提醒不是会议，不占用“忙碌”时间
                 "TRANSP:TRANSPARENT",
+                # 前一天晚上 20:00 提醒（全天事件从当天 0 点往前推 4 小时）
+                "BEGIN:VALARM",
+                "ACTION:DISPLAY",
+                f"DESCRIPTION:{alarm_map[name]}",
+                "TRIGGER:-PT4H",
+                "END:VALARM",
                 "END:VEVENT"
             ]
             events.append("\n".join(event))
