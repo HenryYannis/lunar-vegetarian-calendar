@@ -43,12 +43,13 @@ def generate_events(start_year, end_year, is_traditional):
                 f"DTEND;VALUE=DATE:{next_day_str}",
                 f"DTSTAMP:{dtstamp}",
                 f"UID:Ical-lunar-chuyi-shiwu-{date_str}@xbmlz.cn",
-                "CREATED:19000101T120000Z",
+                f"CREATED:{dtstamp}",
                 f"LAST-MODIFIED:{dtstamp}",
                 "SEQUENCE:0",
                 "STATUS:CONFIRMED",
                 f"SUMMARY:{event_summary}",
-                "TRANSP:OPAQUE",
+                # 初一十五是提醒不是会议，不占用“忙碌”时间
+                "TRANSP:TRANSPARENT",
                 "END:VEVENT"
             ]
             events.append("\n".join(event))
@@ -61,6 +62,24 @@ def generate_events(start_year, end_year, is_traditional):
             
     print(f"  Finished: Found {len(events)} events in {time.time()-t0:.1f}s.")
     return events
+
+def write_calendar(path, name, desc, events):
+    header = [
+        "BEGIN:VCALENDAR",
+        "PRODID:-//Lunar Vegetarian Calendar//Generator 1.0//EN",
+        "VERSION:2.0",
+        "CALSCALE:GREGORIAN",
+        f"X-WR-CALNAME:{name}",
+        "X-WR-TIMEZONE:Asia/Shanghai",
+        f"X-WR-CALDESC:{desc}",
+        # 告诉 Apple / Outlook 等客户端每天刷新一次
+        "REFRESH-INTERVAL;VALUE=DURATION:P1D",
+        "X-PUBLISHED-TTL:P1D",
+    ]
+    content = "\n".join(header) + "\n" + "\n".join(events) + "\nEND:VCALENDAR\n"
+    with open(path, "w", encoding="utf-8", newline="\r\n") as f:
+        f.write(content)
+    print(f"Wrote {name} calendar to {path}")
 
 def main():
     try:
@@ -77,38 +96,18 @@ def main():
     os.makedirs(sources_dir, exist_ok=True)
     
     # 1. Simplified Chinese Version
-    simplified_events = generate_events(start_year, end_year, is_traditional=False)
-    simplified_header = [
-        "BEGIN:VCALENDAR",
-        "PRODID:-//Lunar Vegetarian Calendar//Generator 1.0//EN",
-        "VERSION:2.0",
-        "CALSCALE:GREGORIAN",
-        "X-WR-CALNAME:农历初一十五",
-        "X-WR-TIMEZONE:Asia/Shanghai",
-        "X-WR-CALDESC:食斋",
-    ]
-    simplified_content = "\n".join(simplified_header) + "\n" + "\n".join(simplified_events) + "\nEND:VCALENDAR\n"
-    simplified_path = os.path.join(sources_dir, "chuyi-shiwu-simplified-all.ics")
-    with open(simplified_path, "w", encoding="utf-8", newline="\r\n") as f:
-        f.write(simplified_content)
-    print(f"Wrote simplified calendar to {simplified_path}")
-    
+    write_calendar(
+        os.path.join(sources_dir, "chuyi-shiwu-simplified-all.ics"),
+        "农历初一十五", "食斋",
+        generate_events(start_year, end_year, is_traditional=False),
+    )
+
     # 2. Traditional Chinese Version
-    traditional_events = generate_events(start_year, end_year, is_traditional=True)
-    traditional_header = [
-        "BEGIN:VCALENDAR",
-        "PRODID:-//Lunar Vegetarian Calendar//Generator 1.0//EN",
-        "VERSION:2.0",
-        "CALSCALE:GREGORIAN",
-        "X-WR-CALNAME:農曆初一十五",
-        "X-WR-TIMEZONE:Asia/Shanghai",
-        "X-WR-CALDESC:食齋",
-    ]
-    traditional_content = "\n".join(traditional_header) + "\n" + "\n".join(traditional_events) + "\nEND:VCALENDAR\n"
-    traditional_path = os.path.join(sources_dir, "chuyi-shiwu-traditional-all.ics")
-    with open(traditional_path, "w", encoding="utf-8", newline="\r\n") as f:
-        f.write(traditional_content)
-    print(f"Wrote traditional calendar to {traditional_path}")
+    write_calendar(
+        os.path.join(sources_dir, "chuyi-shiwu-traditional-all.ics"),
+        "農曆初一十五", "食齋",
+        generate_events(start_year, end_year, is_traditional=True),
+    )
 
 if __name__ == '__main__':
     main()
