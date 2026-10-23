@@ -6,6 +6,7 @@ An auto-sync subscription calendar specially designed for people who need remind
 
 ## 🌟 Features
 - **Long-Term Coverage**: Source data covers **2026 to 2100** (75 years, 1856 calendar events). Long-range lunar calculations become less reliable further out, and official almanacs generally only go to around 2100, so the data stops there. With automated rolling updates, subscribers only load the latest 13-month window, balancing long-term coverage and device performance.
+- **Reminder the Evening Before**: Each event carries an alert at 20:00 the day before ("Tomorrow is the 1st lunar day, remember to eat vegetarian", shown in Chinese). Apple Calendar and Outlook support alerts in subscribed calendars; on Apple devices, untick "Remove Alerts" when subscribing if it is checked. Google Calendar ignores alerts embedded in subscribed calendars.
 - **Ad-Free & Clean**: Only contains reminders for the 1st and 15th days of the lunar month, with zero ads or promotions.
 - **Cross-Platform Support**: Supports Apple Calendar, Google Calendar, Outlook, and various built-in Android calendars.
 
@@ -67,10 +68,10 @@ You can usually import via URL by opening the built-in Calendar app and tapping 
 │   ├── generate_feeds.py    # Python script to extract rolling 13-month calendar from database (no deps)
 │   └── generate_all_sources.py # One-time generation script for the 2026-2100 source database (requires tyme4py)
 ├── sources/
-│   ├── chuyi-shiwu-simplified-all.ics # Complete 2026-2100 Simplified Chinese database (~510KB)
-│   └── chuyi-shiwu-traditional-all.ics # Complete 2026-2100 Traditional Chinese database (~510KB)
-├── chuyi-shiwu-simplified.ics  # Simplified Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
-├── chuyi-shiwu-traditional.ics # Traditional Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
+│   ├── chuyi-shiwu-simplified-all.ics # Complete 2026-2100 Simplified Chinese database (~700KB)
+│   └── chuyi-shiwu-traditional-all.ics # Complete 2026-2100 Traditional Chinese database (~700KB)
+├── chuyi-shiwu-simplified.ics  # Simplified Chinese calendar feed (subscription target, auto-updated, ~11KB)
+├── chuyi-shiwu-traditional.ics # Traditional Chinese calendar feed (subscription target, auto-updated, ~11KB)
 ├── LICENSE                     # MIT License file
 └── README.en.md                # Project documentation
 ```
