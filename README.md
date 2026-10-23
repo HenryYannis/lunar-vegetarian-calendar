@@ -6,6 +6,7 @@
 
 ## 🌟 特色
 - **长期可用**：源数据覆盖 **2026 年至 2100 年**（共 75 年，1856 个日历事件）。农历远期推算越往后越不可靠，官方历表一般也只到 2100 年左右，所以只保留这个范围。通过云端自动更新，订阅用户仅加载最近 13 个月的滚动数据，兼顾时间跨度与设备性能。
+- **前一晚提醒**：每个事件都带一个前一天晚上 20:00 的提醒（“明天农历初一，记得吃素”）。Apple 日历和 Outlook 支持订阅日历里的提醒；Apple 设备订阅时如果勾选了「移除提醒」，需要取消勾选才会收到。Google 日历会忽略订阅日历自带的提醒。
 - **纯净无感**：只包含初一和十五的事件提醒，绝无任何额外推广或垃圾广告信息。
 - **全平台支持**：支持 Apple Calendar、Google Calendar、Outlook 以及各种安卓系统自带日历。
 
@@ -55,10 +56,10 @@
 │   ├── generate_feeds.py    # 用于从主库中提取 13 个月滚动日历的裁剪脚本（无依赖）
 │   └── generate_all_sources.py # 使用 tyme4py 重新生成 2026-2100 年主数据库的一键脚本
 ├── sources/
-│   ├── chuyi-shiwu-simplified-all.ics # 2026-2100 年简中完整日历主库（约 510KB）
-│   └── chuyi-shiwu-traditional-all.ics # 2026-2100 年繁中完整日历主库（约 510KB）
-├── chuyi-shiwu-simplified.ics  # 根目录简中日历文件（订阅入口，自动滚动更新，约 7.8KB）
-├── chuyi-shiwu-traditional.ics # 根目录繁中日历文件（订阅入口，自动滚动更新，约 7.8KB）
+│   ├── chuyi-shiwu-simplified-all.ics # 2026-2100 年简中完整日历主库（约 700KB）
+│   └── chuyi-shiwu-traditional-all.ics # 2026-2100 年繁中完整日历主库（约 700KB）
+├── chuyi-shiwu-simplified.ics  # 根目录简中日历文件（订阅入口，自动滚动更新，约 11KB）
+├── chuyi-shiwu-traditional.ics # 根目录繁中日历文件（订阅入口，自动滚动更新，约 11KB）
 ├── LICENSE                     # MIT 开源协议文件
 └── README.md                   # 项目说明文档
 ```
