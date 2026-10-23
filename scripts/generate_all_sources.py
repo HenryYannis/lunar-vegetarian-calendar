@@ -70,7 +70,7 @@ def main():
         sys.exit(1)
         
     start_year = 2026
-    end_year = 2999
+    end_year = 2100
     
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     sources_dir = os.path.join(base_dir, "sources")
