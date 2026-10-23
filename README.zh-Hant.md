@@ -62,6 +62,7 @@
 ├── chuyi-shiwu-simplified.ics  # 根目錄簡中日曆檔案（訂閱入口，自動滾動更新，約 7.8KB）
 ├── chuyi-shiwu-traditional.ics # 根目錄繁中日曆檔案（訂閱入口，自動滾動更新，約 7.8KB）
 ├── LICENSE                     # MIT 開源協議檔案
+├── last-updated.txt            # 月更任務每次寫入的執行時間，防止 schedule 被停用
 ├── requirements.txt            # 固定 tyme4py 版本，避免演算法升級讓日期悄悄變化
 └── README.zh-Hant.md           # 專案說明文件
 ```

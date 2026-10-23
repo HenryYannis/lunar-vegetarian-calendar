@@ -43,8 +43,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
+          # 每次都写入运行时间，保证每月至少有一次提交。
+          # 公开仓库 60 天没有活动，GitHub 会自动停用 schedule。
+          date -u +'%Y-%m-%dT%H:%M:%SZ' > last-updated.txt
+
           # Stage the modified root ICS files
-          git add chuyi-shiwu-simplified.ics chuyi-shiwu-traditional.ics
+          git add chuyi-shiwu-simplified.ics chuyi-shiwu-traditional.ics last-updated.txt
           
           # Check if there are any changes staged for commit
           if ! git diff --cached --quiet; then

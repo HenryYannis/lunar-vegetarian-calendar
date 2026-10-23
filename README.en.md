@@ -74,6 +74,7 @@ You can usually import via URL by opening the built-in Calendar app and tapping 
 ├── chuyi-shiwu-simplified.ics  # Simplified Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
 ├── chuyi-shiwu-traditional.ics # Traditional Chinese calendar feed (subscription target, auto-updated, ~7.8KB)
 ├── LICENSE                     # MIT License file
+├── last-updated.txt            # Written by every monthly run so GitHub keeps the schedule enabled
 ├── requirements.txt            # Pins tyme4py so an algorithm update can't silently shift dates
 └── README.en.md                # Project documentation
 ```
