@@ -50,9 +50,11 @@ def filter_ics(source_path, target_path, start_date, end_date):
         
     lines = content.splitlines()
     
+    # BEGIN:VEVENT 之前的行都是日历头；END:VCALENDAR 固定写在最后。
+    # 这样即使窗口内一个事件都没有，文件结构也正确。
     header = []
     events = []
-    footer = []
+    seen_event = False
     
     in_event = False
     current_event_lines = []
@@ -60,6 +62,7 @@ def filter_ics(source_path, target_path, start_date, end_date):
     
     for line in lines:
         if line.startswith('BEGIN:VEVENT'):
+            seen_event = True
             in_event = True
             current_event_lines = [line]
             current_event_date = None
@@ -72,14 +75,11 @@ def filter_ics(source_path, target_path, start_date, end_date):
             current_event_lines.append(line)
             if line.startswith('DTSTART'):
                 current_event_date = parse_event_date(line)
-        else:
-            if not events:
-                header.append(line)
-            else:
-                footer.append(line)
+        elif not seen_event and line.strip() and line != 'END:VCALENDAR':
+            header.append(line)
                 
     # Reassemble and write to target path
-    new_content = "\n".join(header) + "\n" + "\n".join(events) + "\n" + "\n".join(footer) + "\n"
+    new_content = "\n".join(header + events + ['END:VCALENDAR']) + "\n"
     
     # Ensure directories exist
     os.makedirs(os.path.dirname(target_path), exist_ok=True)
