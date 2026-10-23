@@ -50,8 +50,10 @@
 
 ```text
 ├── .github/workflows/
+│   ├── ci.yml               # PR 檢查：生成滾動日曆並自檢
 │   └── update-feeds.yml     # GitHub Actions 自動剪裁與更新日曆的雲端工作流
 ├── scripts/
+│   ├── check_feeds.py       # 訂閱檔案自檢腳本（裝了 tyme4py 時會核對農曆日期）
 │   ├── generate_feeds.py    # 用於從主庫中提取 13 個月滾動日曆的剪裁腳本（無相依性）
 │   └── generate_all_sources.py # 使用 tyme4py 重新生成 2026-2999 年主資料庫的一鍵腳本
 ├── sources/
@@ -60,6 +62,7 @@
 ├── chuyi-shiwu-simplified.ics  # 根目錄簡中日曆檔案（訂閱入口，自動滾動更新，約 7.8KB）
 ├── chuyi-shiwu-traditional.ics # 根目錄繁中日曆檔案（訂閱入口，自動滾動更新，約 7.8KB）
 ├── LICENSE                     # MIT 開源協議檔案
+├── requirements.txt            # 固定 tyme4py 版本，避免演算法升級讓日期悄悄變化
 └── README.zh-Hant.md           # 專案說明文件
 ```
 
