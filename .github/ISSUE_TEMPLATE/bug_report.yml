@@ -1,0 +1,40 @@
+name: 问题反馈 / Bug report
+description: 日期不对、订阅不了、提醒不响 / Wrong date, can't subscribe, no reminder
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么 / What happened
+      description: 看到了什么，期望是什么。日期不对请写出公历日期 / What you saw and expected. For a wrong date, give the Gregorian date.
+    validations:
+      required: true
+  - type: dropdown
+    id: calendar
+    attributes:
+      label: 日历 App / Calendar app
+      options:
+        - Apple 日历 / Apple Calendar
+        - Google 日历 / Google Calendar
+        - Outlook
+        - 安卓自带日历 / Android built-in
+        - 其他 / Other
+    validations:
+      required: true
+  - type: dropdown
+    id: link
+    attributes:
+      label: 订阅链接 / Subscription link
+      options:
+        - GitHub raw
+        - jsDelivr（国内加速 / China CDN）
+        - 不确定 / Not sure
+  - type: dropdown
+    id: variant
+    attributes:
+      label: 版本 / Variant
+      options:
+        - 简体 / Simplified
+        - 繁體 / Traditional
+        - English
+        - 不确定 / Not sure
