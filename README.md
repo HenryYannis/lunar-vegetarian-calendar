@@ -150,4 +150,4 @@ Apple 设备请检查订阅时是否勾选了「移除提醒」。Google 日历�
 
 ## 许可证
 
-[MIT](LICENSE) © Henry Yannis
+[MIT](LICENSE) © 2026 程小宝

@@ -150,4 +150,4 @@ The calendar data is calculated with the open-source calendar library [tyme4py](
 
 ## License
 
-[MIT](LICENSE) © Henry Yannis
+[MIT](LICENSE) © 2026 Henry Yannis
